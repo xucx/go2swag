@@ -542,6 +542,7 @@ func (self *builder) buildSchemaFromStruct(decl *declParser, st *types.Struct, s
 
 		ps := schema.Properties[name]
 		self.buildSchemaFromType(decl, fld.Type(), &ps)
+		ps.Description = afld.Comment.Text()
 		schema.Properties[name] = ps
 
 	}
